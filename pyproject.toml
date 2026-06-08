@@ -1,0 +1,44 @@
+[project]
+name = "pokinator"
+version = "0.1.0"
+description = "Agente inteligente que adivinha Pokémons através de perguntas, comparando Árvore de Decisão e Naive Bayes"
+readme = "README.md"
+authors = [
+    { name = "Allyson Santos", email = "css.allyson@gmail.com" },
+    { name = "Edson Gabriel", email = "edsongabriel2000.eg@gmail.com" },
+    { name = "Renan Ribeiro", email = "renan.ribeiro.taveira@gmail.com" },
+]
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.0",
+    "pandas>=2.2.0",
+    "scikit-learn>=1.5.0",
+    "streamlit>=1.40.0",
+    "joblib>=1.4.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.400",
+    "ruff>=0.11.0",
+    "taskipy>=1.14.0",
+]
+
+[tool.pyright]
+include = ["backend", "frontend"]
+pythonVersion = "3.11"
+typeCheckingMode = "standard"
+
+[tool.taskipy.tasks]
+lint = "ruff check ."
+pre_format = "ruff check --fix ."
+format = "ruff format ."
+typecheck = "pyright"
+app = "streamlit run frontend/app.py"
