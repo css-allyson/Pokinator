@@ -15,6 +15,7 @@ dependencies = [
     "scikit-learn>=1.5.0",
     "streamlit>=1.40.0",
     "joblib>=1.4.0",
+    "matplotlib>=3.10.9",
 ]
 
 [tool.ruff]
@@ -42,3 +43,4 @@ pre_format = "ruff check --fix ."
 format = "ruff format ."
 typecheck = "pyright"
 app = "streamlit run frontend/app.py"
+test = "python tests/evaluate_models.py"
