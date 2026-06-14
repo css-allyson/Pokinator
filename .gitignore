@@ -35,10 +35,6 @@ env/
 .DS_Store
 Thumbs.db
 
-# Data files (versionados apenas via DVC ou manualmente se pequenos)
-data/*.csv
-data/*.json
-data/*.parquet
 
 # Streamlit cache
 .streamlit/
